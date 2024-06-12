@@ -107,3 +107,82 @@
     
 })(jQuery);
 
+
+
+
+/*js for course select*/
+$(document).ready(function () {
+    $("#C1").click(function () {
+        $("#Table1").show();
+        $("#Table2").hide();
+        $("#Table3").hide();
+        $("#Table4").hide();
+        $("#Table5").hide();
+        $("#Table6").hide();
+        $("#Table7").hide();
+    });
+	$("#C2").click(function () {
+        $("#Table2").show();
+        $("#Table1").hide();
+        $("#Table3").hide();
+        $("#Table4").hide();
+        $("#Table5").hide();
+        $("#Table6").hide();
+        $("#Table7").hide();
+    });
+	$("#C3").click(function () {
+        $("#Table3").show();
+        $("#Table2").hide();
+        $("#Table1").hide();
+        $("#Table4").hide();
+        $("#Table5").hide();
+        $("#Table6").hide();
+        $("#Table7").hide();
+    });
+			 $("#C4").click(function ()  {
+        $("#Table4").show();
+        $("#Table2").hide();
+        $("#Table3").hide();
+        $("#Table1").hide();
+        $("#Table5").hide();
+        $("#Table6").hide();
+        $("#Table7").hide();
+    });
+    $("#C5").click(function ()  {
+        $("#Table5").show();
+        $("#Table2").hide();
+        $("#Table3").hide();
+        $("#Table1").hide();
+        $("#Table4").hide();
+        $("#Table6").hide();
+        $("#Table7").hide();
+    });
+    $("#C6").click(function ()  {
+        $("#Table6").show();
+        $("#Table2").hide();
+        $("#Table3").hide();
+        $("#Table1").hide();
+        $("#Table4").hide();
+        $("#Table5").hide();
+        $("#Table7").hide();
+    });
+    $("#C7").click(function ()  {
+        $("#Table7").show();
+        $("#Table1").hide();
+        $("#Table2").hide();
+        $("#Table3").hide();
+        $("#Table4").hide();
+        $("#Table5").hide();
+        $("#Table6").hide();
+    });
+});
+		$(document).ready(function () {
+        $("#Table1").show();
+        $("#Table2").hide();
+        $("#Table3").hide();
+        $("#Table4").hide();
+        $("#Table5").hide();
+        $("#Table6").hide();
+        $("#Table7").hide();
+    });
+/*end of js for course select*/
