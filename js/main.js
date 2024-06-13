@@ -186,3 +186,96 @@ $(document).ready(function () {
         $("#Table7").hide();
     });
 /*end of js for course select*/
+
+
+
+
+
+
+/*********gallery************************** */
+
+document.addEventListener("DOMContentLoaded", function() {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const captionText = document.getElementById("caption");
+    const close = document.querySelector(".close");
+
+    galleryItems.forEach(item => {
+        item.addEventListener("click", () => {
+            lightbox.style.display = "block";
+            lightboxImg.src = item.src;
+            captionText.innerHTML = item.alt;
+        });
+    });
+
+    close.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target == lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const eventCards = document.querySelectorAll(".event-card");
+    const modal = document.getElementById("eventModal");
+    const closeModal = document.querySelector(".close");
+    const eventTitle = document.getElementById("event-title");
+    const eventDate = document.getElementById("event-date");
+    const eventDescription = document.getElementById("event-description");
+
+    const eventDetails = {
+        1: {
+            title: "Orientation Week",
+            date: "August 20-25, 2024",
+            description: "Welcome new students to our college community with a week full of fun activities, campus tours, and orientation sessions."
+        },
+        2: {
+            title: "Tech Conference",
+            date: "September 10, 2024",
+            description: "Join us for a day-long conference where industry leaders and innovators discuss the latest trends in technology and its impact on our world."
+        },
+        3: {
+            title: "Homecoming",
+            date: "October 5, 2024",
+            description: "Reunite with old friends and make new ones at our annual homecoming event. Enjoy a day of festivities, sports, and alumni gatherings."
+        },
+        4: {
+            title: "Art Exhibition",
+            date: "November 15-20, 2024",
+            description: "Explore the creative works of our talented art students at this year's art exhibition. Paintings, sculptures, and digital art will be on display."
+        },
+        5: {
+            title: "Art Exhibition",
+            date: "December 12, 2024",
+            description: "Explore the creative works of our talented art students at this year's art exhibition. Paintings, sculptures, and digital scienceEngage with groundbreaking research, interactive displays, and visionary innovations at our inspiring Science Exhibition event will be on display."
+        }
+    };
+
+    eventCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const eventId = card.getAttribute("data-event");
+            const eventDetail = eventDetails[eventId];
+
+            eventTitle.textContent = eventDetail.title;
+            eventDate.textContent = eventDetail.date;
+            eventDescription.textContent = eventDetail.description;
+
+            modal.style.display = "block";
+        });
+    });
+
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+});
